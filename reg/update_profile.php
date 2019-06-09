@@ -23,7 +23,8 @@
 					</div>
 
 					<?php
-					$conn = mysqli_connect('localhost', 'root', '', 'profiling');
+					require('../global.php');
+					//$conn = mysqli_connect('localhost', 'root', '', 'profiling');
 					$sql = mysqli_query($conn, "Select * from applicants Where user_id='" . $_GET['id'] . "'");
 					if($row = mysqli_fetch_assoc($sql)){
 						?>
@@ -47,6 +48,8 @@
 								<span>Beneficiaries</span>
 							</label>
 						</div>
+
+						<input type="hidden" value="<?php echo $_GET['id']; ?>" name="id">
 
 						<input class="text" type="text" name="ben1" placeholder="" id="rem">
 						<input class="text" type="text" name="ben2" placeholder="" id="rem">

@@ -49,7 +49,7 @@ if(mysqli_query($conn, "UPDATE `applicants` SET
 	`beneficiaries`='$beneficiaries',
 	`username`='$username',
 	`password`='$password'
-	WHERE user_id= " . $_COOKIE['user_id'])){
+	WHERE user_id= " . $_POST['id'])){
 	echo "true";
 }else{
 	echo "UPDATE `applicants` SET 
@@ -69,5 +69,5 @@ if(mysqli_query($conn, "UPDATE `applicants` SET
 	`beneficiaries`='$beneficiaries',
 	`username`='$username',
 	`password`='$password'
-	WHERE user_id= " . $_COOKIE['user_id'];
+	WHERE user_id= " . $_POST['id'];
 }
