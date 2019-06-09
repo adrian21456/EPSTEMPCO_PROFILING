@@ -1,0 +1,270 @@
+body, h5{
+	font-family: Arial !important;
+}
+
+.button_down{
+	margin-top: 32px;
+	margin-left: -26px !important;
+}
+.left_more{
+	margin-left: -26px !important;
+}
+.left_more2{
+	margin-left: -59px !important;
+}
+.view_color{
+	color: #61abd8;
+	font-size: 25px;
+}
+.edit_color{
+	color: rgb(84, 138, 101);
+	font-size: 25px;
+}
+.del_color{
+	color: #E02133;
+	font-size: 25px;
+}
+.option_header{
+	text-align: center !important;
+}	
+.divider1{
+	margin-top: 40px;
+}
+.divider2{
+	margin-top: 20px;
+}
+.divider3{
+	margin-top: 63px;
+}
+.row1{
+
+}
+.nav2{
+	background-color: #DEE8EA;
+}
+.space_top{
+	margin-top: 10px;
+}
+.space_top2{
+	margin-top: 0px;
+}
+.student_button{
+	margin-top: 32px;
+}
+.padding_extended{
+	margin-left: 10px !important;
+}
+.top_label{
+	margin-top: 10px;
+}
+.push_left{
+	margin-left: -40px !important;
+}
+.push_left2{
+	margin-left: -20px !important;
+}
+.push_left3{
+	margin-left: -80px !important;
+}
+.push_left4{
+	margin-left: -70px !important;
+}
+.result_container{
+	height: 200px;
+}
+.left_push{
+	margin-left: 20px;
+}
+.radio1{
+	height: 20px;
+	width: 20px;
+}
+.select_left{
+	margin-left: -19px;
+	margin-top: -8px;
+	margin-right: -10px;
+}
+.select_left2{
+	margin-left: -40px;
+	margin-top: -8px;
+	margin-right: -10px;
+}
+.select_left3{
+	margin-left: 12px;
+	margin-top: -8px;
+	margin-right: -10px;
+}
+.label_left{
+    margin-right: 15px;
+}
+.submit_button{
+    margin-top: -8px;
+}
+.sidebar-2{
+	
+}
+.container1{
+	margin-top: 10px;
+}
+
+.td1{
+	border-color: black !important;
+	padding: 3px;
+	font-size: 14px;
+}
+.td2{
+	border-color: black !important;
+	padding: 3px;
+	font-size: 16px;
+	background-color: #5959ff;
+}
+.td3{
+	border-color: black !important;
+	padding: 3px;
+	font-size: 14px;
+	background-color: #8c8cff;
+}
+.top_field{
+	font-size: 	14px;
+	font-weight: bold;
+	text-decoration: underline;
+	border: 0px;
+}
+.top_field2{
+	font-size: 	12px;
+	margin-top: -18px;
+	border: 0px;
+	border-color: transparent;
+	background-color: transparent;
+	
+}
+.top_field3{
+	font-size: 	14px;
+	font-weight: bold;
+	text-decoration: underline;
+	border: 0px;
+	margin-top: 30px;
+}
+.p1{
+	font-size: 	14px;
+}
+.push_left3{
+	margin-left: 10px !important;
+}
+.push_left4{
+	margin-left: 334px !important;
+}
+.card1{
+	background-color: rgb(75, 192, 192) !important;
+	margin-right: 20px;
+	border-radius: 4px;
+	border: 2px solid #2c4e50;
+	padding: 1px 1px 1px 1px;
+}
+.card2{
+	background-color: rgb(54, 162, 235) !important;
+	margin-right: 20px;
+	border-radius: 4px;
+	border: 2px solid #2c4e50;
+	padding: 1px 1px 1px 1px;
+}
+.card3{
+	background-color: rgb(255, 205, 86) !important;
+	margin-right: 20px;
+	border-radius: 4px;
+	border: 2px solid #2c4e50;
+	padding: 1px 1px 1px 1px;
+}
+.card-content{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+}
+.contents{
+	margin-top: 20px;
+	margin-right: 20px !important;
+	margin-left: 18%;
+}
+.dashboard{
+	font-size: 30px;
+	font-family: Arial !important;
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+.icon1{
+	margin-left: 20px;
+}
+.card-content h5{
+	font-size: 40px !important;
+	font-weight: 600;
+	font-family: Arial !important;
+	color: #212529;
+	margin-bottom: 5px !important;
+}
+.card-content h6{
+	font-size: 25px !important;
+}
+.break_line{
+	margin-top: 10px;
+}
+.img1{
+	width: 150px;
+	height: 150px;
+	text-align: center;
+}
+.second_row{
+	margin-top: 0px !important;
+	border: 2px solid #000;
+	width: 153px;
+	height: 153px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.col-sm-5 h6 a{
+	color: #000;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.col-sm-6 h6 a{
+	color: #000;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+#take_snapshots, #save{
+	margin-left: 31px;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+#save{
+	margin-left: 21px;
+}
+
+.or{
+	margin-top: 55px !important;
+}
+
+.or h6{
+	color: #000;
+	font-weight: 600;
+	font-size: 20px;
+	margin-left: -20px;
+}
+
+input[name='image']{
+	margin-top: 26px;
+	border-color: blue;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
+
+input[name='sub'], input[name='sub'], #req{
+	border-color: blue !important;
+	margin-bottom: 10px;
+}
