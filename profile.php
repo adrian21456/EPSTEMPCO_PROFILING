@@ -40,11 +40,11 @@ require("global.php");
 					<h5>Spouse Occupation: <?php echo $row["spouse_occupation"]; ?></h5>
 					<h5>Beneficiaries: <br><ul style="margin-top: 10px"><?php echo $beneficiaries; ?></ul></h5>
 					<h5>Requirements Submitted: <br><ul style="margin-top: 10px"><?php echo $requirements; ?></ul></h5>
-					<?php if($_COOKIE["access_level"] != "0"){
+					<?php if($_COOKIE["access_level"] != "100"){
 						?>
 
-						<h6><a href="update_requirements.php">Update Requirements</a></h6>
-						<h6><a href="reg/update_profile.php">Update Application Profile</a></h6>
+						<h6><a href="update_requirements.php?id=<?php echo $_GET['id']; ?>">Update Requirements</a></h6>
+						<h6><a href="reg/update_profile.php?id=<?php echo $_GET['id']; ?>">Update Application Profile</a></h6>
 						<?php
 					}
 					?>
@@ -54,9 +54,9 @@ require("global.php");
 					<div class="second_row">
 						<img src="uploads/<?php echo $row['profile_picture']; ?>" class="img1"><br>
 					</div>
-					<?php if($_COOKIE["access_level"] != "0"){
+					<?php if($_COOKIE["access_level"] != "100"){
 						?>
-						<h6><a href="update_profile_pic.php">Update Profile Picture</a></h6>
+						<h6><a href="update_profile_pic.php?id=<?php echo $_GET['id']; ?>">Update Profile Picture</a></h6>
 						<?php
 					}
 					?>

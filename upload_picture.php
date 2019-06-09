@@ -37,8 +37,8 @@ if ($uploadOk == 0) {
 }else {
 	if (move_uploaded_file($_FILES["image"]["tmp_name"], $new_filename)) {
 		require('global.php');
-		if(mysqli_query($conn, "Update applicants Set profile_picture='$raw' Where user_id='" . $_COOKIE['user_id'] . "'")){
-			header("location:profile.php?id=" . $_COOKIE['user_id']);
+		if(mysqli_query($conn, "Update applicants Set profile_picture='$raw' Where user_id='" . $_POST['id'] . "'")){
+			header("location:profile.php?id=" . $_POST['id']);
 		}else{
 			echo "An error has occured";
 		}

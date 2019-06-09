@@ -6,54 +6,39 @@ require("global.php");
 <!--content -->
 <div class="content row1">
 	<div class="container-fluid">
-		<h5><b>List of applicants</b></h5>
-		<div class="col-sm-9" style="margin-left: -10px;">
-			<table class="table">
-				<thead>
-					<th width="40%">Name</th>
-					<th>Date Applied</th>
-					<th width="30%"><span class="text-center">Actions</span></th>
-				</thead>
-				<?php
-				$sql = mysqli_query($conn, "Select * from applicants Where access_level = 1 and approved = 0 and denied = 0 order by name");
-				$count = mysqli_num_rows($sql);
-				if($count > 0){
-					while($row = mysqli_fetch_array($sql)){
-						?>
-						<tr>
-							<td><h6><?php echo $row["name"]; ?></h6></td>
-							<td><h6><?php echo date("F d, Y", strtotime($row["timestamp"])); ?></h6></td>
-							<td><h6 style="margin-left: 0px !important;">&nbsp;&nbsp;&nbsp;<a href="profile.php?id=<?php echo $row['user_id']; ?>" class="text-primary" style="font-size: 14px; font-family: Arial; font-weight: bold; margin-top: -5px;">VIEW</a>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="approve('<?php echo $row['user_id']; ?>')" class="text-success" style="font-size: 14px; font-family: Arial; font-weight: bold; margin-top: -5px;">APPROVE</a>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="deny('<?php echo $row['user_id']; ?>')" class="text-danger" style="font-size: 14px; font-family: Arial; font-weight: bold; margin-top: -5px;">DENY</a></h6></td>
-						</tr>
-						<?php
-					}
-				}else{
-
-				}
-				?>
-			</table>
+		<h5 style="margin-top:0px;"><b>List of Members and Applicants &nbsp; <a href="reg/new_member.php" style="font-weight: 600; text-decoration: underline;">New Applicant</a></b></h5>
+		<div class="row">
+			<div><h6 class="search">Search Applicant: </h6></div>
+			<div class="col-sm-5">
+				<input type="text" id="search" oninput="load()" name="search" class="form-control" placeholder="Applicant's or Member's name">
+			</div>
 		</div>
-		
-
-		<!--------------- PART TWO ------------>
-
-		<h5 style="margin-top:40px;"><b>List of approved applicants</b></h5>
-		<div class="col-sm-9" style="margin-left: -10px;">
+		<div class="col-sm-9" id="cont" style="margin-left: -10px; padding-top: 20px">
 			<table class="table">
 				<thead>
-					<th width="40%">Name</th>
-					<th>Date Approved</th>
-					<th width="30%"><span class="text-center">Actions</span></th>
+					<th width="60%">Name</th>
+					<th>Membership Status</th>
+					<th width="10%"><span class="text-center"></span></th>
 				</thead>
 				<?php
-				$sql = mysqli_query($conn, "Select * from applicants Where access_level = 1 and approved = 1 and denied = 0 order by name");
+				$sql = mysqli_query($conn, "Select * from applicants Where access_level = 1 order by name");
+
+
 				$count = mysqli_num_rows($sql);
 				if($count > 0){
 					while($row = mysqli_fetch_array($sql)){
+						$status = "unindentified";
+						if($row["approved"] == "0" && $row["denied"] == "0"){
+							$status = "PENDING";
+						}elseif($row["approved"] == "1" && $row["denied"] == "0"){
+							$status = "APPROVED";
+						}elseif($row["approved"] == "0" && $row["denied"] == "1"){
+							$status = "DENIED";
+						}
 						?>
 						<tr>
 							<td><h6><?php echo $row["name"]; ?></h6></td>
-							<td><h6><?php echo date("F d, Y", strtotime($row["action_date"])); ?></h6></td>
+							<td><h6><?php echo $status; ?></h6></td>
 							<td><h6 style="margin-left: 0px !important;">&nbsp;&nbsp;&nbsp;<a href="profile.php?id=<?php echo $row['user_id']; ?>" class="text-primary" style="font-size: 14px; font-family: Arial; font-weight: bold; margin-top: -5px;">VIEW</a></h6></td>
 						</tr>
 						<?php
@@ -62,25 +47,18 @@ require("global.php");
 
 				}
 				?>
-			</table>
+			</table>		
 		</div>
 	</div>
-
-
 </div>
 
-<script>
-	function approve(x){
-		if(confirm('Do you confirm this application?')){
-			document.location.replace("approve.php?id=" + x);
-		}
-	}
+<script type="text/javascript">
 
-	function deny(x){
-		if(confirm('Do you really want to deny this application?')){
-			document.location.replace("deny.php?id=" + x);
-		}
-	}
+	function load(){
+		//console.log($('#search').val());
+		$('#cont').empty();
+		$('#cont').load('applicant_table.php?id=' + $('#search').val());
+	};
 </script>
 
 

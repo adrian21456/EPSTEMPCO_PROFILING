@@ -268,3 +268,8 @@ input[name='sub'], input[name='sub'], #req{
 	border-color: blue !important;
 	margin-bottom: 10px;
 }
+
+.search{
+	margin-top: 12px !important;
+	margin-left: 15px;
+}

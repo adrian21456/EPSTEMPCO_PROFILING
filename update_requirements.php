@@ -13,6 +13,7 @@ require("global.php");
 				<form method="POST" enctype="multipart/form-data" action="upload_requirement.php">
 
 				<input type="file" name="requirements[]" multiple="multiple" id="req" accept=".pdf" class="form-control">
+				<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 
 				<input type="submit" name="sub" value="Update Requirements" class="form-control">
 

@@ -24,7 +24,7 @@
 
 					<?php
 					$conn = mysqli_connect('localhost', 'root', '', 'profiling');
-					$sql = mysqli_query($conn, "Select * from applicants Where user_id='" . $_COOKIE['user_id'] . "'");
+					$sql = mysqli_query($conn, "Select * from applicants Where user_id='" . $_GET['id'] . "'");
 					if($row = mysqli_fetch_assoc($sql)){
 						?>
 
@@ -89,6 +89,7 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function register(){
+		var id = '<?php echo $_GET['id']; ?>';
 		$.ajax({
 			type: 'POST',
 			url: '../update.php',
@@ -97,7 +98,7 @@
 				console.log(data);
 				if(data == "true"){
 					alert("Your profile has been updated");
-					document.location.replace("../index.php");
+					document.location.replace("../profile.php?id=" + id);
 				}else{
 					alert("An error has occured");
 				}

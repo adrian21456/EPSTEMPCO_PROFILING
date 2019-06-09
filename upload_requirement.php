@@ -12,10 +12,10 @@ for( $i=0 ; $i < $total ; $i++ ) {
       array_push($repo, $raw);
       if($i == $total - 1){
         require("global.php");
-        if(mysqli_query($conn, "Update applicants Set requirements='" . json_encode($repo) . "' Where user_id='" . $_COOKIE['user_id'] . "'")){
-          header("location: profile.php?id=" . $_COOKIE['user_id']);
+        if(mysqli_query($conn, "Update applicants Set requirements='" . json_encode($repo) . "' Where user_id='" . $_POST['id'] . "'")){
+          header("location: profile.php?id=" . $_POST['id']);
         }else{
-          echo "Update applicants Set requirements='" . json_encode($repo) . "' Where user_id='" . $_COOKIE['user_id'] . "'";
+          echo "Update applicants Set requirements='" . json_encode($repo) . "' Where user_id='" . $_POST['id'] . "'";
         }
       }
     }

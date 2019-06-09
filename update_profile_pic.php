@@ -23,6 +23,7 @@ $image = "";
 				<form method="POST" id="upload" action="upload_picture.php" enctype="multipart/form-data">
 
 					<input type="file" name="image" accept=".jpg" class="form-control btn-primary">
+					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 					<input type="submit" name="sub" value="Upload Photo" class="form-control btn-success text-primary">
 
 				</form>
@@ -34,14 +35,15 @@ $image = "";
 
 <script type="text/javascript">
 	function upload_pic(){
+		var id = '<?php echo $_GET['id']; ?>';
 		$.ajax({
 			type: 'POST',
 			url: 'upload_picture2.php',
-			data: 'image=' + imageName,
+			data: 'image=' + imageName + "&id=" + id,
 			success: function(data){
 				console.log(data);
 				if(data == 'true'){
-					document.location.replace("profile.php?id=" + readCookie("user_id"));
+					document.location.replace("profile.php?id=" + id);
 				}else{
 					alert("An error has occured");
 				}

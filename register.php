@@ -49,24 +49,11 @@ if(mysqli_query($conn, "INSERT INTO `applicants` (
 	`beneficiaries`, 
 	`username`, 
 	`password`) VALUES ('1', '$name', '$civil_status', '$birth_place', '$birthday', '$address', '$occupation', '$salary', '$religion', '$office_address', '$father', '$mother', '$spouse', '$spouse_occupation', '$beneficiaries', '$username', '$password')")){
-	echo "true";
+	
+	$query = mysqli_query($conn, "Select * from applicants Order by user_id DESC LIMIT 1");
+	while($row = mysqli_fetch_assoc($query)){
+		echo $row['user_id'];
+	}
 }else{
-	echo "INSERT INTO `applicants` (
-	`access_level`, 
-	`name`, 
-	`civil_status`, 
-	`birth_place`, 
-	`birthday`, 
-	`address`, 
-	`occupation`, 
-	`salary`, 
-	`religion`, 
-	`office_address`, 
-	`father`, 
-	`mother`, 
-	`spouse`, 
-	`spouse_occupation`, 
-	`beneficiaries`, 
-	`username`, 
-	`password`) VALUES ('1', '$name', '$civil_status', '$birth_place', '$birthday', '$address', '$occupation', '$salary', '$religion', '$office_address', '$father', '$mother', '$spouse' '$spouse_occupation', '$beneficiaries', '$username', '$password')";
+	echo "false";
 }
